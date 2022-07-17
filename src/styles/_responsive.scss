@@ -1,0 +1,20 @@
+@import 'config';
+
+@include media-md{
+    .location{
+        &__info{
+            display: flex;
+            flex-direction: row !important;
+            justify-content: space-evenly !important;
+
+            &--details{
+                padding: 0 2rem;
+            }
+        }
+
+        .location__info--details + .location__info--details{
+            border-left: solid hsl(0, 0%, 59%);
+        }
+
+    }
+}

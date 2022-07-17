@@ -1,0 +1,139 @@
+@import 'responsive';
+@import 'config';
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+:root{
+    font-family: 'Rubik', sans-serif;
+}
+
+h1, h2, h3, h4, h5{
+    margin: 0;
+    padding: 0;
+}
+
+.App{
+    position: relative;
+}
+
+.App__header{
+    background-image: url('/src/assets/images/pattern-bg.png');
+    height: 30vh;
+    background-color: blue;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.App__header .App__name{
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    font-size: 1.4rem;
+    color: white;
+    text-transform: uppercase;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding: 2.5em;
+}
+
+.location{
+    margin: -9.5rem auto auto auto;
+    width: 80%;
+    @include flexDiv(column, center, center);
+
+    form{
+        width: 100%;
+        height: 3rem;
+        border-radius: 1rem;
+        overflow: hidden;
+        max-width: 500px;
+        @include flexDiv(row, flex-start, flex-start, 0);
+
+        input{
+            border: none;
+            height: inherit;
+            flex-grow: 5;
+            padding: 0 1rem;
+            font-size: 1.125rem;
+            font-family: 'Rubik' sans-serif;
+            font-weight: 500;
+        }
+        button{
+            border: none;
+            height: inherit;
+            flex-grow: 2;
+            background-color: black;
+            cursor: pointer;
+            transition: all .2s ease;
+
+            .caretRight{
+                color: white;
+            }
+
+            &:hover{
+                background-color: rgb(56, 56, 56);
+            }
+        }
+    }
+
+    #{&}__info{
+        font-family: 'Rubik' sans-serif;
+        background-color: white;
+        padding: 1rem;
+        margin-top: 1rem;
+        border-radius: 1rem;
+        width: 100%;
+        max-width: 1000px;
+        min-height: 150px;
+
+        @include flexDiv(column, center, center, 2rem);
+
+        &--details{
+            display: flex; 
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+            h5{
+                color: hsl(0, 0%, 59%);
+                text-transform: uppercase;
+                font-size: .75rem;
+                font-family: 'Rubik' sans-serif;
+            }
+        } 
+    }
+}
+
+#map{
+    height: 70vh;
+    position: absolute;
+    top: 17.4rem;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+
+
+/* 
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+- Very Dark Gray: hsl(0, 0%, 17%)
+- Dark Gray: hsl(0, 0%, 59%)
+
+## Typography
+
+### Body Copy
+
+- Font size (text input): 18px
+
+### Font
+
+- Family: [Rubik](https://fonts.google.com/specimen/Rubik)
+- Weights: 400, 500, 700
+
+*/
